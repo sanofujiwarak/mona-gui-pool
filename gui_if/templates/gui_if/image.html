@@ -1,0 +1,81 @@
+{% extends "gui_if/_extends/base.html" %}{% load static %}
+
+{% block head_title %}画像確認用{% endblock %}
+
+{% block link %}<link href="{% static "gui_if/css/gui_if.css" %}" rel="stylesheet">{% endblock %}
+
+{% block contents %}
+<div class="dashboard">
+	<!-- ロゴとメニュー -->
+	<img src="{% static "gui_if/img/menu.png" %}" width="277" height="72" />
+
+	<!-- 採掘力、成果 -->
+	<div style="position:absolute;margin-top:10px;margin-left:320px;">
+		<img src="{% static "gui_if/img/info.png" %}" width="106" height="54" />
+		<!-- 採掘力 -->
+		<div style="margin-top:-59px;margin-left:54px;z-index:2;">
+			<div style="text-align:right;width:20px;"><p>900</p></div>
+			<div style="margin-left:27px;"><p>MH/s</p></div>
+		</div>
+
+		<!-- 成果 -->
+		<div style="margin-top:-45px;margin-left:54px;z-index:2;">
+			<div style="text-align:right;width:20px;"><p>90</p></div>
+			<div style="margin-left:21px;"><p>MONA</p></div>
+		</div>
+	</div>
+
+	<!-- ワーカー -->
+	<div style="position:relative;width:277px;padding-top:5px;padding-left:6px;z-index:1;">
+		<img src="{% static "gui_if/img/stage.png" %}" width="286" height="56" />
+		<div style="z-index:2;">
+			<img style="margin-top:-48px;margin-left:24px;" src="{% static "gui_if/img/w00.png" %}" width="49" height="26" title="0 kH/s"/>
+			<div style="margin-top:-70px;margin-left:20px;"><p>Worker1</p></div>
+			<img style="margin-top:-48px;margin-left:30px;" src="{% static "gui_if/img/w00.png" %}" width="49" height="26" title="0 kH/s"/>
+			<div style="margin-top:-70px;margin-left:102px;"><p>Worker2</p></div>
+			<img style="margin-top:-48px;margin-left:30px;" src="{% static "gui_if/img/w00.png" %}" width="49" height="26" title="0 kH/s"/>
+			<div style="margin-top:-70px;margin-left:184px;"><p>Worker3</p></div>
+		</div>
+
+		<img src="{% static "gui_if/img/stage.png" %}" width="286" height="56" />
+		<div style="z-index:2;">
+			<img style="margin-top:-48px;margin-left:24px;" src="{% static "gui_if/img/w01.gif" %}" width="49" height="26" title="～100 kH/s"/>
+			<div style="margin-top:-70px;margin-left:20px;"><p>Worker4</p></div>
+			<img style="margin-top:-48px;margin-left:30px;" src="{% static "gui_if/img/w01.gif" %}" width="49" height="26" title="～100 kH/s"/>
+			<div style="margin-top:-70px;margin-left:102px;"><p>Worker5</p></div>
+			<img style="margin-top:-48px;margin-left:30px;" src="{% static "gui_if/img/w01.gif" %}" width="49" height="26" title="～100 kH/s"/>
+			<div style="margin-top:-70px;margin-left:184px;"><p>Worker6</p></div>
+		</div>
+
+		<img src="{% static "gui_if/img/stage.png" %}" width="286" height="56" />
+		<div style="z-index:2;">
+			<img style="margin-top:-48px;margin-left:24px;" src="{% static "gui_if/img/w02.gif" %}" width="47" height="26" title="～500 kH/s"/>
+			<div style="margin-top:-70px;margin-left:20px;"><p>Worker7</p></div>
+			<img style="margin-top:-48px;margin-left:32px;" src="{% static "gui_if/img/w02.gif" %}" width="47" height="26" title="～500 kH/s"/>
+			<div style="margin-top:-70px;margin-left:102px;"><p>Worker8</p></div>
+			<img style="margin-top:-48px;margin-left:32px;" src="{% static "gui_if/img/w02.gif" %}" width="47" height="26" title="～500 kH/s"/>
+			<div style="margin-top:-70px;margin-left:184px;"><p>Worker9</p></div>
+		</div>
+
+		<img src="{% static "gui_if/img/stage.png" %}" width="286" height="56" />
+		<div style="z-index:2;">
+			<img style="margin-top:-46px;margin-left:24px;" src="{% static "gui_if/img/w03.gif" %}" width="49" height="28" title="～1000 kH/s"/>
+			<div style="margin-top:-70px;margin-left:20px;"><p>Worker10</p></div>
+			<img style="margin-top:-46px;margin-left:30px;" src="{% static "gui_if/img/w03.gif" %}" width="49" height="28" title="～1000 kH/s"/>
+			<div style="margin-top:-70px;margin-left:102px;"><p>Worker11</p></div>
+			<img style="margin-top:-46px;margin-left:30px;" src="{% static "gui_if/img/w03.gif" %}" width="49" height="28" title="～1000 kH/s"/>
+			<div style="margin-top:-70px;margin-left:184px;"><p>Worker12</p></div>
+		</div>
+
+		<img src="{% static "gui_if/img/stage.png" %}" width="286" height="56" />
+		<div style="z-index:2;">
+			<img style="margin-top:-47px;margin-left:24px;" src="{% static "gui_if/img/w04.gif" %}" width="49" height="27" title=""/>
+			<div style="margin-top:-70px;margin-left:20px;"><p>Worker13</p></div>
+			<img style="margin-top:-47px;margin-left:30px;" src="{% static "gui_if/img/w04.gif" %}" width="49" height="27" title=""/>
+			<div style="margin-top:-70px;margin-left:102px;"><p>Worker14</p></div>
+			<img style="margin-top:-47px;margin-left:30px;" src="{% static "gui_if/img/w04.gif" %}" width="49" height="27" title=""/>
+			<div style="margin-top:-70px;margin-left:184px;"><p>Worker15</p></div>
+		</div>
+	</div>
+</div>
+{% endblock %}

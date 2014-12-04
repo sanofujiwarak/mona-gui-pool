@@ -1,0 +1,16 @@
+.dashboard {
+	color: #FFF;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 10px;
+	line-height: 1.42857;
+}
+
+.dashboard div {
+	position: absolute;
+}
+
+.dashboard img {
+	vertical-align: middle;
+	border: 0 none;
+	position:relative;
+}

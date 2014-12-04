@@ -1,0 +1,39 @@
+{% extends "gui_if/_extends/base.html" %}
+
+{% block head_title %}input{% endblock %}
+
+{% block contents %}
+<form action="" method="POST">
+	{% csrf_token %}
+
+	{% for field in form %}
+		<div class="form-group">
+			<label for="{{ field.id_for_label }}">
+				{{ field.label }}
+			</label>
+
+			<div>{{ field }}</div>
+
+			<div>
+				<span>
+					{{ field.help_text }}
+				</span>
+
+				{% for err in field.errors %}
+					<div>{{ err }}</div>
+				{% endfor %}
+			</div>
+		</div>
+		<br>
+	{% endfor %}
+
+	<div>
+		<div>
+			<button type="submit">表示する</button>
+		</div>
+	</div>
+</form>
+
+<br>
+<a href="{% url "gui_if:image" %}">部品画像の確認用画面</a>
+{% endblock %}

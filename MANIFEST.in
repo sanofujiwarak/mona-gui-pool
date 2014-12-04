@@ -1,0 +1,2 @@
+recursive-include gui_if/static *
+recursive-include gui_if/templates *

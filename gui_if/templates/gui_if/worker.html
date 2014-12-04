@@ -1,0 +1,68 @@
+{% load static %}
+
+{% for worker in workers %}
+	{% if worker.n == 0 %}
+		{% comment %}worker画像の出し分け{% endcomment %}
+		<img src="{% static "gui_if/img/stage.png" %}" width="286" height="56" />
+		<div style="z-index:2;">
+			{% if worker.hashrate == 0 %}
+				<img style="margin-top:-48px;margin-left:24px;" src="{% static "gui_if/img/w00.png" %}" width="49" height="26" title="{{ worker.hashrate }} {{ unit }}"/>
+			{% endif %}
+
+			{% if worker.hashrate > 0 and worker.hashrate <= 100 %}
+				<img style="margin-top:-48px;margin-left:24px;" src="{% static "gui_if/img/w01.gif" %}" width="49" height="26" title="{{ worker.hashrate }} {{ unit }}"/>
+			{% endif %}
+
+			{% if worker.hashrate > 100 and worker.hashrate <= 500 %}
+				<img style="margin-top:-48px;margin-left:24px;" src="{% static "gui_if/img/w02.gif" %}" width="47" height="26" title="{{ worker.hashrate }} {{ unit }}"/>
+			{% endif %}
+
+			{% if worker.hashrate > 500 and worker.hashrate <= 1000 %}
+				<img style="margin-top:-46px;margin-left:24px;" src="{% static "gui_if/img/w03.gif" %}" width="49" height="28" title="{{ worker.hashrate }} {{ unit }}"/>
+			{% endif %}
+
+			{% if worker.hashrate > 1000 %}
+				<img style="margin-top:-47px;margin-left:24px;" src="{% static "gui_if/img/w04.gif" %}" width="49" height="27" title="{{ worker.hashrate }} {{ unit }}"/>
+			{% endif %}
+
+		{% comment %}worker名{% endcomment %}
+			<div style="margin-top:-70px;margin-left:20px;"><p>{{ worker.username }}</p></div>
+	{% endif %}
+
+	{% comment %}worker画像の出し分け{% endcomment %}
+	{% if worker.n == 1 or worker.n == 2 %}
+		{% if worker.hashrate == 0 %}
+			<img style="margin-top:-48px;margin-left:30px;" src="{% static "gui_if/img/w00.png" %}" width="49" height="26" title="{{ worker.hashrate }} {{ unit }}"/>
+		{% endif %}
+
+		{% if worker.hashrate > 0 and worker.hashrate <= 100 %}
+			<img style="margin-top:-48px;margin-left:30px;" src="{% static "gui_if/img/w01.gif" %}" width="49" height="26" title="{{ worker.hashrate }} {{ unit }}"/>
+		{% endif %}
+
+		{% if worker.hashrate > 100 and worker.hashrate <= 500 %}
+			<img style="margin-top:-48px;margin-left:32px;" src="{% static "gui_if/img/w02.gif" %}" width="47" height="26" title="{{ worker.hashrate }} {{ unit }}"/>
+		{% endif %}
+
+		{% if worker.hashrate > 500 and worker.hashrate <= 1000 %}
+			<img style="margin-top:-46px;margin-left:30px;" src="{% static "gui_if/img/w03.gif" %}" width="49" height="28" title="{{ worker.hashrate }} {{ unit }}"/>
+		{% endif %}
+
+		{% if worker.hashrate > 1000 %}
+			<img style="margin-top:-47px;margin-left:30px;" src="{% static "gui_if/img/w04.gif" %}" width="49" height="27" title="{{ worker.hashrate }} {{ unit }}"/>
+		{% endif %}
+	{% endif %}
+
+	{% comment %}worker名{% endcomment %}
+	{% if worker.n == 1 %}
+		<div style="margin-top:-70px;margin-left:102px;"><p>{{ worker.username }}</p></div>
+	{% endif %}
+
+	{% if worker.n == 2 %}
+		<div style="margin-top:-70px;margin-left:184px;"><p>{{ worker.username }}</p></div>
+	{% endif %}
+
+	{% comment %}tagを閉じる{% endcomment %}
+	{% if worker.n == 2 or forloop.last %}
+		</div>
+	{% endif %}
+{% endfor %}

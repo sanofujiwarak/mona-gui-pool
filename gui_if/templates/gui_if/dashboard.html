@@ -1,0 +1,41 @@
+{% extends "gui_if/_extends/base.html" %}{% load static %}
+
+{% block head_title %}dashboard{% endblock %}
+
+{% block link %}<link href="{% static "gui_if/css/gui_if.css" %}" rel="stylesheet">{% endblock %}
+
+{% block body_attribute %}bgcolor="508DFF"{% endblock %}
+
+{% block contents %}
+<div class="dashboard">
+	{% comment %}ロゴとメニュー{% endcomment %}
+	<img src="{% static "gui_if/img/menu.png" %}" width="277" height="72" />
+
+	{% comment %}採掘力、成果{% endcomment %}
+	<div style="position:absolute;margin-top:10px;margin-left:320px;">
+		<img src="{% static "gui_if/img/info.png" %}" width="106" height="54" />
+		{% comment %}採掘力{% endcomment %}
+		<div style="margin-top:-59px;margin-left:54px;z-index:2;">
+			<div style="text-align:right;width:20px;"><p id="hashrate"></p></div>
+			<div style="margin-left:27px;"><p id="unit"></p></div>
+		</div>
+
+		{% comment %}成果{% endcomment %}
+		<div style="margin-top:-45px;margin-left:54px;z-index:2;">
+			<div style="text-align:right;width:20px;"><p id="credit"></p></div>
+			<div style="margin-left:21px;"><p id="currency"></p></div>
+		</div>
+	</div>
+
+	{% comment %}ワーカー{% endcomment %}
+	<div style="position:relative;width:277px;padding-top:5px;padding-left:6px;z-index:1;" id="worker">
+	</div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="{{ STATIC_URL }}gui_if/js/gui_if.js" type="text/javascript"></script>
+
+{% comment %}jQueryの呼び出し{% endcomment %}
+<script>gui_if.function("{{ absolute_url }}", "{{ STATIC_URL }}", "{{ url }}", "{{ api_key }}", "hashrate", "unit", "credit", "currency", "worker");</script>
+{% endblock %}
